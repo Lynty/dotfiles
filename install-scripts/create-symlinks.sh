@@ -4,7 +4,6 @@
 # Variables
 #==============
 dotfiles_dir=~/dotfiles
-log_file=~/install_progress_log.txt
 
 #==============
 # Delete existing dot files and folders
@@ -33,11 +32,3 @@ ln -sf $dotfiles_dir/tmux.conf ~/.tmux.conf
 # Set zsh as the default shell
 #==============
 chsh -s /bin/zsh
-
-#==============
-# Give the user a summary of what has been installed
-#==============
-echo -e "\n====== Summary ======\n"
-cat $log_file
-echo
-rm $log_file

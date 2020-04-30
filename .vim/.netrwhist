@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/Users/ldong/.tmux'
+let g:netrw_dirhist_9='/Users/ldong/.vim'
+let g:netrw_dirhist_8='/Users/ldong/.tmux'
+let g:netrw_dirhist_7='/Users/ldong/infra/terraform/patches'
+let g:netrw_dirhist_6='/Users/ldong/infra/ansible/roles'
+let g:netrw_dirhist_5='/Users/ldong/infra/scripts/aws_utils'
+let g:netrw_dirhist_4='/Users/ldong/infra/ansible/roles/wormhole/tasks'
+let g:netrw_dirhist_3='/Users/ldong/infra/terraform/modules/aws_eks'
+let g:netrw_dirhist_2='/Users/ldong/infra/k8s/helmsman/.helmsman-tmp'
+let g:netrw_dirhist_1='/Users/ldong/infra/k8s/helmsman/gitlab-runner'
