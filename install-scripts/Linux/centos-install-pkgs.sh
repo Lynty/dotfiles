@@ -1,41 +1,41 @@
 log_file=~/install_progress_log.txt
 
-yum install -y zsh
+sudo yum install -y zsh
 if type -p zsh > /dev/null; then
     echo "zsh Installed" >> $log_file
 else
     echo "zsh FAILED TO INSTALL!!!" >> $log_file
 fi
 
-yum install -y vim
+sudo yum install -y vim
 if type -p vim > /dev/null; then
     echo "Vim Installed" >> $log_file
 else
     echo "Vim FAILED TO INSTALL!!!" >> $log_file
 fi
 
-yum install -y curl
+sudo yum install -y curl
 if type -p curl > /dev/null; then
     echo "curl Installed" >> $log_file
 else
     echo "crul FAILED TO INSTALL!!!" >> $log_file
 fi
 
-yum install -y epel-release.noarch the_silver_searcher
+sudo yum install -y epel-release.noarch the_silver_searcher
 if type -p ag > /dev/null; then
     echo "Silver searcher Installed" >> $log_file
 else
     echo "Silver searcher FAILED TO INSTALL!!!" >> $log_file
 fi
 
-yum install -y tmux
+sudo yum install -y tmux
 if type -p tmux > /dev/null; then
     echo "tmux Installed" >> $log_file
 else
     echo "tmux FAILED TO INSTALL!!!" >> $log_file
 fi
 
-yum install -y python-pip
+sudo yum install -y python-pip
 if type -p pip > /dev/null; then
     echo "pip Installed" >> $log_file
 else
