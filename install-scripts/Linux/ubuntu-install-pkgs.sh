@@ -1,4 +1,5 @@
 log_file=~/install_progress_log.txt
+DEBIAN_FRONTEND=noninteractive
 
 apt-get -y install zsh
 if type -p zsh > /dev/null; then
