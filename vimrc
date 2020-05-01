@@ -31,7 +31,7 @@ filetype indent plugin on
 set wildmenu 
 
 " sets colorscheme which is from .vim/colors folder
-colorscheme seashell
+colorscheme molokai
 
 " case insensitive search, except when using capital letters
 set ignorecase
