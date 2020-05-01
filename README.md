@@ -1,9 +1,11 @@
 # dotfiles
 
 ### Ubuntu
-- `./dotfiles/install-scripts/Linux/install-pkgs.sh`
+- `sudo ./dotfiles/install-scripts/Linux/install-pkgs.sh`
 - `./dotfiles/install-scripts/create-symlinks.sh`
 
 ### CentOS
-- `./dotfiles/install-scripts/Linux/centos_install-pkgs.sh`
+- `sudo ./dotfiles/install-scripts/Linux/centos_install-pkgs.sh`
 - `./dotfiles/install-scripts/create-symlinks.sh`
+
+> You may need to run `sudo yum update -y` or `sudo apt-get update && apt-get upgrade` to update your available packages.

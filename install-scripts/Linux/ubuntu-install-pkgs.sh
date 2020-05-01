@@ -1,43 +1,41 @@
 log_file=~/install_progress_log.txt
 
-yum install -y zsh
+apt-get -y install zsh
 if type -p zsh > /dev/null; then
     echo "zsh Installed" >> $log_file
 else
     echo "zsh FAILED TO INSTALL!!!" >> $log_file
 fi
 
-yum install -y zsh-syntax-highlighting
-
-yum install -y vim-gnome
+apt-get -y install vim-gnome
 if type -p vim > /dev/null; then
     echo "Vim Installed" >> $log_file
 else
     echo "Vim FAILED TO INSTALL!!!" >> $log_file
 fi
 
-yum install -y curl
+apt-get -y install curl
 if type -p curl > /dev/null; then
     echo "curl Installed" >> $log_file
 else
     echo "crul FAILED TO INSTALL!!!" >> $log_file
 fi
 
-yum install -y silversearcher-ag
+apt-get install silversearcher-ag
 if type -p ag > /dev/null; then
     echo "Silver searcher Installed" >> $log_file
 else
     echo "Silver searcher FAILED TO INSTALL!!!" >> $log_file
 fi
 
-yum install -y tmux
+apt-get -y install tmux
 if type -p tmux > /dev/null; then
     echo "tmux Installed" >> $log_file
 else
     echo "tmux FAILED TO INSTALL!!!" >> $log_file
 fi
 
-yum install -y python-pip
+apt-get -y install python-pip
 if type -p pip > /dev/null; then
     echo "pip Installed" >> $log_file
 else
