@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:$PATH:$HOME/Library/Python/3.7/bin:$HOME/env/pylatex/bin
+export PATH=$HOME/bin:$PATH
+#:$HOME/Library/Python/3.7/bin:$HOME/env/pylatex/bin
 export GOPATH=$HOME/go
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -62,7 +63,6 @@ ZSH_THEME="gianu"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  zsh-syntax-highlighting
   colored-man-pages
   osx
 )
@@ -104,6 +104,7 @@ alias kcc="kubectl create"
 
 # Terraform
 alias tf="terraform" 
+alias tfyolo="terraform apply -auto-approve"
 
 # Linux
 alias cpwd="pwd | pbcopy"
