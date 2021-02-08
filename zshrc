@@ -1,7 +1,9 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:$PATH
+export PATH=$HOME/bin:$PATH:$GOPATH/bin
 #:$HOME/Library/Python/3.7/bin:$HOME/env/pylatex/bin
 export GOPATH=$HOME/go
+# Activate default virtual env
+. ~/venvs/sada-default/bin/activate
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 #export NIX_IGNORE_SYMLINK_STORE=1 #https://github.com/NixOS/nix/issues/2925
@@ -103,11 +105,23 @@ alias ke="kubectl explain"
 alias kcc="kubectl create"
 
 # Terraform
-alias tf="terraform" 
+alias tf="terraform"
+alias tfi="terraform init"
 alias tfyolo="terraform apply -auto-approve"
+alias tfp="terraform plan"
+alias tfa="terraform apply"
+alias tfd="terraform destroy"
+alias tfc="terraform console"
 
-# Linux
-alias cpwd="pwd | pbcopy"
+# GCloud
+alias gccl="gcloud config configurations list"
+alias gcca="gcloud config configurations activate"
+alias gccd="gcloud config configurations delete"
+alias gcal="gcloud auth list"
+alias gal="gcloud auth login"
+
+# OS
+alias cwd="pwd | pbcopy"
 
 if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
 
