@@ -1,0 +1,14 @@
+#!/bin/zsh
+
+#brew update
+brew install tmux
+brew install tldr
+brew install tree
+brew install the_silver_searcher
+brew install stow
+brew install rectangle
+brew install z
+brew install jq
+brew install kubernetes-cli
+brew install kubectx
+brew install zsh-syntax-highlighting

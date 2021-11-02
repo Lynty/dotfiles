@@ -1,11 +1,15 @@
 # dotfiles
 
+### Macbook Pro
+- `./install-scripts/MBP/brew`
+- `./install-scripts/create-symlinks.sh`
+
 ### Ubuntu
-- `./dotfiles/install-scripts/Linux/ubuntu-install-pkgs.sh`
-- `./dotfiles/install-scripts/create-symlinks.sh`
+- `./install-scripts/Linux/ubuntu-install-pkgs.sh`
+- `./install-scripts/create-symlinks.sh`
 
 ### CentOS
-- `./dotfiles/install-scripts/Linux/centos-install-pkgs.sh`
-- `./dotfiles/install-scripts/create-symlinks.sh`
+- `./install-scripts/Linux/centos-install-pkgs.sh`
+- `./install-scripts/create-symlinks.sh`
 
 > You may need to run `sudo yum update -y` or `sudo apt-get update && apt-get upgrade` to update your available packages.
