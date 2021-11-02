@@ -1,7 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:$PATH:$GOPATH/bin
 #:$HOME/Library/Python/3.7/bin:$HOME/env/pylatex/bin
-export GOPATH=$HOME/go
+#export GOPATH=$HOME/go
 # Activate default virtual env
 . ~/venvs/sada-default/bin/activate
 # Path to your oh-my-zsh installation.
@@ -54,8 +54,6 @@ ZSH_THEME="gianu"
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
-
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
@@ -67,10 +65,12 @@ plugins=(
   git
   colored-man-pages
   osx
+  zsh-autosuggestions
+  zsh-kubectl-prompt
 )
+RPROMPT=
 
 source $ZSH/oh-my-zsh.sh
-
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -98,11 +98,19 @@ source $ZSH/oh-my-zsh.sh
 
 # Kubernetes
 alias kg="kubectl get"
+alias kgpan="kubectl get po --all-namespaces"
+alias kgdan="kubectl get deploy --all-namespaces"
+alias kgsan="kubectl get svc --all-namespaces"
 alias kdl="kubectl delete"
-alias kc="kubectl create -f"
+alias kc="kubectl config"
+alias kcc="kubectl create"
+alias kcgc="kubectl config get-contexts"
+alias kcuc="kubectl config use-context"
+alias kcdc="kubectl config delete-context"
 alias kdb="kubectl describe"
 alias ke="kubectl explain"
-alias kcc="kubectl create"
+alias ka="kubectl apply -f"
+alias kx="kubectx"
 
 # Terraform
 alias tf="terraform"
@@ -112,6 +120,7 @@ alias tfp="terraform plan"
 alias tfa="terraform apply"
 alias tfd="terraform destroy"
 alias tfc="terraform console"
+alias tfv="terraform version"
 
 # GCloud
 alias gccl="gcloud config configurations list"
@@ -120,8 +129,12 @@ alias gccd="gcloud config configurations delete"
 alias gcal="gcloud auth list"
 alias gal="gcloud auth login"
 
+# Git
+alias gs="git status"
+
 # OS
 alias cwd="pwd | pbcopy"
+alias ls="ls -thorG"
 
 if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
 

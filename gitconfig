@@ -8,5 +8,7 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[advice]                                                                                                                                                                  
+[advice]
         pushNonFastForward = false
+[credential "https://source.developers.google.com"]
+	helper = gcloud.sh
