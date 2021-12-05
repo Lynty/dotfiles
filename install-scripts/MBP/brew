@@ -9,6 +9,7 @@ brew install stow
 brew install rectangle
 brew install z
 brew install jq
+brew install fd
 brew install kubernetes-cli
 brew install kubectx
 brew install zsh-syntax-highlighting

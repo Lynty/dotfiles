@@ -1,9 +1,10 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:$PATH:$GOPATH/bin
+export GOROOT=/usr/local/go
+export PATH=$HOME/bin:$GOROOT/bin:$PATH
 #:$HOME/Library/Python/3.7/bin:$HOME/env/pylatex/bin
 #export GOPATH=$HOME/go
-# Activate default virtual env
-. ~/venvs/sada-default/bin/activate
+## Activate default virtual env
+#. ~/venvs/sada-default/bin/activate
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 #export NIX_IGNORE_SYMLINK_STORE=1 #https://github.com/NixOS/nix/issues/2925
@@ -64,7 +65,7 @@ ZSH_THEME="gianu"
 plugins=(
   git
   colored-man-pages
-  osx
+  macos
   zsh-autosuggestions
   zsh-kubectl-prompt
 )
@@ -113,6 +114,7 @@ alias ka="kubectl apply -f"
 alias kx="kubectx"
 
 # Terraform
+#export TF_LOG_DEBUG=1
 alias tf="terraform"
 alias tfi="terraform init"
 alias tfyolo="terraform apply -auto-approve"
@@ -121,6 +123,7 @@ alias tfa="terraform apply"
 alias tfd="terraform destroy"
 alias tfc="terraform console"
 alias tfv="terraform version"
+alias tfu="terraform-use"
 
 # GCloud
 alias gccl="gcloud config configurations list"
@@ -128,6 +131,7 @@ alias gcca="gcloud config configurations activate"
 alias gccd="gcloud config configurations delete"
 alias gcal="gcloud auth list"
 alias gal="gcloud auth login"
+alias gaal="gcloud auth application-default login"
 
 # Git
 alias gs="git status"
@@ -151,3 +155,28 @@ export AWS_SDK_LOAD_CONFIG=1
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /Users/ldong/bin/vault vault
+
+function terraform-use {
+  vsn=$1
+  pkg="terraform_${vsn}_darwin_amd64.zip"
+  url="https://releases.hashicorp.com/terraform/${vsn}/${pkg}"
+  tf="$(which terraform || echo /usr/local/bin/terraform)"
+  if [ -e "${tf}-${vsn}" ]; then
+    ln -Fs "${tf}-${vsn}" "${tf}"
+  elif curl --head --fail "${url}" 2> /dev/null; then
+    wget -O "/tmp/${pkg}" "${url}"
+    (
+      cd /tmp/
+      unzip -o "/tmp/${pkg}"
+      rm "/tmp/${pkg}"
+      mv terraform "${tf}-${vsn}"
+    )
+    ln -Fs "${tf}-${vsn}" "${tf}"
+  else
+    echo "ERROR \`${url}\` not found"
+    return 1
+  fi
+  terraform -version
+}
+
+export GO111MODULE=on

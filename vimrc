@@ -29,6 +29,8 @@ filetype indent plugin on
 
 " better command-line completion
 set wildmenu 
+set wildmode=list:longest
+set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 
 " sets colorscheme which is from .vim/colors folder
 colorscheme molokai
@@ -50,3 +52,20 @@ let g:terraform_align=1
 
 " Fix makefile tabs
 autocmd FileType make setlocal noexpandtab
+
+" set title to name of file being edited
+set title
+
+" highlight cursor line underneath the cursor horizontally
+set cursorline
+
+" show partial cmd you type
+set showcmd
+
+" STATUS LINE ------------------------------------------------------------ {{{
+" Clear status line when vimrc is reloaded.
+set statusline=
+" Status line left side.
+set statusline+=\ %F\ %M\ %Y\ %R
+" Show the status on the second to last line.
+set laststatus=2
