@@ -66,6 +66,6 @@ set showcmd
 " Clear status line when vimrc is reloaded.
 set statusline=
 " Status line left side.
-set statusline+=\ %F\ %M\ %Y\ %R
+set statusline+=\ %F\ %R
 " Show the status on the second to last line.
 set laststatus=2

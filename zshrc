@@ -92,8 +92,6 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
@@ -112,6 +110,14 @@ alias kdb="kubectl describe"
 alias ke="kubectl explain"
 alias ka="kubectl apply -f"
 alias kx="kubectx"
+
+# Docker
+alias dlf="docker logs -f"
+alias dps="docker ps"
+alias dpsa="docker ps -a"
+alias dce="docker-compose exec"
+alias dcu="docker-compose up -d"
+alias dcd="docker-compose down"
 
 # Terraform
 #export TF_LOG_DEBUG=1
@@ -135,6 +141,7 @@ alias gaal="gcloud auth application-default login"
 
 # Git
 alias gs="git status"
+alias gg="git commit -am"
 
 # OS
 alias cwd="pwd | pbcopy"

@@ -1,5 +1,5 @@
 [user]
-	name = Lynn Dong
+	name = lynnux
 	email = lynn.dong@sada.com
 [core]
 	editor = vim
@@ -12,3 +12,5 @@
         pushNonFastForward = false
 [credential "https://source.developers.google.com"]
 	helper = gcloud.sh
+[http]
+	cookiefile = /Users/ldong/.gitcookies

@@ -12,4 +12,6 @@ brew install jq
 brew install fd
 brew install kubernetes-cli
 brew install kubectx
+brew install siege
+brew install helm
 brew install zsh-syntax-highlighting
