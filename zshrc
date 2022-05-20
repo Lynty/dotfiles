@@ -1,19 +1,19 @@
 # If you come from bash you might have to change your $PATH.
 export GOROOT=/usr/local/go
 export PATH=$HOME/bin:$GOROOT/bin:$PATH
-#:$HOME/Library/Python/3.7/bin:$HOME/env/pylatex/bin
-#export GOPATH=$HOME/go
-## Activate default virtual env
-#. ~/venvs/sada-default/bin/activate
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 #export NIX_IGNORE_SYMLINK_STORE=1 #https://github.com/NixOS/nix/issues/2925
 #. /Users/ldong/.nix-profile/etc/profile.d/nix.sh
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
+# Set name of the theme to load. Optionally, if you set this to "random" it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+
+# Check out your favorites ~/.zsh_favlist and find new favorites with ~/.oh-my-zsh/tools/theme_chooser.sh
 ZSH_THEME="gianu"
+#unsetopt menucomplete
+#unsetopt autocd
+#unsetopt menu_complete   # do not autoselect the first completion entry
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -65,11 +65,9 @@ ZSH_THEME="gianu"
 plugins=(
   git
   colored-man-pages
-  macos
   zsh-autosuggestions
   zsh-kubectl-prompt
 )
-RPROMPT=
 
 source $ZSH/oh-my-zsh.sh
 # User configuration

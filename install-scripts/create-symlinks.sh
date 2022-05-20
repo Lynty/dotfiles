@@ -28,6 +28,7 @@ ln -sf $dotfiles_dir/zshrc ~/.zshrc
 ln -sf $dotfiles_dir/gitconfig ~/.gitconfig
 ln -sf $dotfiles_dir/tmux.conf ~/.tmux.conf
 ln -sf $dotfiles_dir/oh-my-zsh ~/.oh-my-zsh
+ln -sf $dotfiles_dir/zsh_favlist ~/.zsh_favlist
 ln -sf $dotfiles_dir/makefile ~/makefile
 
 #==============
