@@ -5,7 +5,7 @@ export DOTFILES=$HOME/dotfiles
 # Path to your oh-my-zsh installation.
 export ZSH="$DOTFILES/oh-my-zsh"
 #export NIX_IGNORE_SYMLINK_STORE=1 #https://github.com/NixOS/nix/issues/2925
-#. /Users/ldong/.nix-profile/etc/profile.d/nix.sh
+#. $HOME/.nix-profile/etc/profile.d/nix.sh
 
 # Set name of the theme to load. Optionally, if you set this to "random" it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -148,16 +148,16 @@ alias ls="ls -thorG"
 if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/ldong/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ldong/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '$HOME/google-cloud-sdk/path.zsh.inc' ]; then . '$HOME/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/ldong/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ldong/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '$HOME/google-cloud-sdk/completion.zsh.inc' ]; then . '$HOME/google-cloud-sdk/completion.zsh.inc'; fi
 
 # Enable Terraform runs with NWI AWS assumerole sandbox account
 export AWS_SDK_LOAD_CONFIG=1
 
 autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /Users/ldong/bin/vault vault
+complete -o nospace -C $HOME/bin/vault vault
 
 function terraform-use {
   vsn=$1

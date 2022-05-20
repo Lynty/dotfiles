@@ -17,4 +17,3 @@
 # todo
 - [x] Gianu theme symlink `~/.oh-my-zsh/themes/gianu.zsh-theme`
 - [ ] Set up easy way to install `gcloud` and add to `$PATH`
-

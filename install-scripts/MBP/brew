@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 #brew update
 brew install tmux
@@ -14,6 +14,7 @@ brew install kubernetes-cli
 brew install kubectx
 brew install siege
 brew install helm
+brew install zsh
 brew install zsh-syntax-highlighting
 
 ZSH="$HOME/dotfiles/oh-my-zsh" sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
