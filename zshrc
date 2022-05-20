@@ -1,8 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 export GOROOT=/usr/local/go
 export PATH=$HOME/bin:$GOROOT/bin:$PATH
+export DOTFILES=$HOME/dotfiles
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH="$DOTFILES/oh-my-zsh"
 #export NIX_IGNORE_SYMLINK_STORE=1 #https://github.com/NixOS/nix/issues/2925
 #. /Users/ldong/.nix-profile/etc/profile.d/nix.sh
 
@@ -10,10 +11,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 
 # Check out your favorites ~/.zsh_favlist and find new favorites with ~/.oh-my-zsh/tools/theme_chooser.sh
+#ZSH_THEME="arrow"
 ZSH_THEME="gianu"
-#unsetopt menucomplete
-#unsetopt autocd
-#unsetopt menu_complete   # do not autoselect the first completion entry
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -69,6 +68,7 @@ plugins=(
   zsh-kubectl-prompt
 )
 
+source $ZSH/plugins/z/z.sh
 source $ZSH/oh-my-zsh.sh
 # User configuration
 
@@ -146,8 +146,6 @@ alias cwd="pwd | pbcopy"
 alias ls="ls -thorG"
 
 if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
-
-source ~/.oh-my-zsh/plugins/z/z.sh
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/ldong/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ldong/google-cloud-sdk/path.zsh.inc'; fi

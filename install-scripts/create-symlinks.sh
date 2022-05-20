@@ -14,6 +14,7 @@ rm -rf ~/.bashrc > /dev/null 2>&1
 rm -rf ~/.tmux > /dev/null 2>&1
 rm -rf ~/.tmux.conf > /dev/null 2>&1
 rm -rf ~/.zshrc > /dev/null 2>&1
+rm -rf $dotfiles_dir/oh-my-zsh/custom
 rm -rf ~/.gitconfig > /dev/null 2>&1
 
 #==============
@@ -30,6 +31,7 @@ ln -sf $dotfiles_dir/tmux.conf ~/.tmux.conf
 ln -sf $dotfiles_dir/oh-my-zsh ~/.oh-my-zsh
 ln -sf $dotfiles_dir/zsh_favlist ~/.zsh_favlist
 ln -sf $dotfiles_dir/makefile ~/makefile
+ln -sf $dotfiles_dir/old-oh-my-zsh/custom/ $dotfiles_dir/oh-my-zsh/custom
 
 #==============
 # Set zsh as the default shell
