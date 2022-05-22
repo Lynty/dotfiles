@@ -11,12 +11,14 @@
 #
 #auth:
 #	gcloud auth configure-docker
+
 EMAIL=lynn.dong@sada.com
+SSH_DIR=$(HOME)/.ssh
 
 gcc:
 	gcloud config configurations create $(GCP_PROJECT_ID) && gcloud config set project $(GCP_PROJECT_ID) && gcloud config set account $(EMAIL)
 	# example: make gcc GCP_PROJECT_ID=bananabread EMAIL=ldong-ext@bread.io
 
-generate-ssh:
-	ssh-keygen -t rsa -C $(EMAIL) -f $(HOME)/.ssh/$(SSH_FOLDER)/id_rsa
-	#ssh-keygen -t ed25519 -C $(EMAIL)
+gen-ssh:
+	mkdir -p $(SSH_DIR)/$(FOLDER) && ssh-keygen -t rsa -C $(EMAIL) -f $(SSH_DIR)/$(FOLDER)/id_rsa
+	# example: make gen-ssh FOLDER=test --directory ~/Make
