@@ -12,9 +12,11 @@ brew install jq
 brew install fd
 brew install kubernetes-cli
 brew install kubectx
+brew install python
 brew install siege
 brew install helm
 brew install zsh
 brew install zsh-syntax-highlighting
+brew install terraform-docs
 
 ZSH="$HOME/dotfiles/oh-my-zsh" sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended

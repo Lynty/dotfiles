@@ -147,12 +147,6 @@ alias ls="ls -thorG"
 
 if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '$HOME/google-cloud-sdk/path.zsh.inc' ]; then . '$HOME/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '$HOME/google-cloud-sdk/completion.zsh.inc' ]; then . '$HOME/google-cloud-sdk/completion.zsh.inc'; fi
-
 # Enable Terraform runs with NWI AWS assumerole sandbox account
 export AWS_SDK_LOAD_CONFIG=1
 
@@ -183,3 +177,9 @@ function terraform-use {
 }
 
 export GO111MODULE=on
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/ldong/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ldong/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/ldong/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ldong/google-cloud-sdk/completion.zsh.inc'; fi

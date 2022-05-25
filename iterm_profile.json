@@ -280,7 +280,7 @@
     }
   },
   "Window Type" : 0,
-  "Cursor Type" : 1,
+  "Cursor Type" : 2,
   "Initial Text" : "tmux",
   "Background Image Location" : "",
   "Blur" : false,

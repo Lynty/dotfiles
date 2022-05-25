@@ -3,6 +3,7 @@
 ### Macbook Pro
 - `./install-scripts/MBP/brew`
 - `./install-scripts/create-symlinks.sh`
+- install iterm2 and import profile
 
 ### Ubuntu
 - `./install-scripts/Linux/ubuntu-install-pkgs.sh`
