@@ -22,3 +22,6 @@ gcc:
 gen-ssh:
 	mkdir -p $(SSH_DIR)/$(FOLDER) && ssh-keygen -t rsa -C $(EMAIL) -f $(SSH_DIR)/$(FOLDER)/id_rsa
 	# example: make gen-ssh FOLDER=test --directory ~/Make
+
+test:
+	docker run -it -v ~/lynnux_tests:/lynnux_tests --rm nixery.dev/shell/curl/git/vim bash
