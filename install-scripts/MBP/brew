@@ -6,7 +6,7 @@ brew install tldr
 brew install tree
 brew install the_silver_searcher
 brew install stow
-brew install rectangle
+brew install --cask visual-studio-code rectangle
 brew install z
 brew install jq
 brew install fd
