@@ -1,17 +1,11 @@
-# If you come from bash you might have to change your $PATH.
-export GOROOT=/usr/local/go
-export PATH=$HOME/bin:$GOROOT/bin:$PATH
 export DOTFILES=$HOME/dotfiles
 # Path to your oh-my-zsh installation.
 export ZSH="$DOTFILES/oh-my-zsh"
+
 #export NIX_IGNORE_SYMLINK_STORE=1 #https://github.com/NixOS/nix/issues/2925
 #. $HOME/.nix-profile/etc/profile.d/nix.sh
 
-# Set name of the theme to load. Optionally, if you set this to "random" it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-
 # Check out your favorites ~/.zsh_favlist and find new favorites with ~/.oh-my-zsh/tools/theme_chooser.sh
-#ZSH_THEME="arrow"
 ZSH_THEME="gianu"
 
 # Set list of themes to load
@@ -51,12 +45,6 @@ ZSH_THEME="gianu"
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -65,14 +53,15 @@ plugins=(
   git
   colored-man-pages
   zsh-autosuggestions
-  zsh-kubectl-prompt
 )
+
+# kubectl rprompt stuff
+autoload -U colors; colors
+source /opt/homebrew/etc/zsh-kubectl-prompt/kubectl.zsh
+RPROMPT='%{$FG[242]%}kx:$ZSH_KUBECTL_CONTEXT%{$reset_color%}'
 
 source $ZSH/plugins/z/z.sh
 source $ZSH/oh-my-zsh.sh
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -87,12 +76,7 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-
+##### ALIASES #####
 # Kubernetes
 alias kg="kubectl get"
 alias kgpan="kubectl get po --all-namespaces"
@@ -108,7 +92,6 @@ alias kdb="kubectl describe"
 alias ke="kubectl explain"
 alias ka="kubectl apply -f"
 alias kx="kubectx"
-
 # Docker
 alias dlf="docker logs -f"
 alias dps="docker ps"
@@ -116,9 +99,7 @@ alias dpsa="docker ps -a"
 alias dce="docker-compose exec"
 alias dcu="docker-compose up -d"
 alias dcd="docker-compose down"
-
 # Terraform
-#export TF_LOG_DEBUG=1
 alias tf="terraform"
 alias tfi="terraform init"
 alias tfyolo="terraform apply -auto-approve"
@@ -128,7 +109,6 @@ alias tfd="terraform destroy"
 alias tfc="terraform console"
 alias tfv="terraform version"
 alias tfu="terraform-use"
-
 # GCloud
 alias gccl="gcloud config configurations list"
 alias gcca="gcloud config configurations activate"
@@ -136,18 +116,16 @@ alias gccd="gcloud config configurations delete"
 alias gcal="gcloud auth list"
 alias gal="gcloud auth login"
 alias gaal="gcloud auth application-default login"
-
 # Git
 alias gs="git status"
 alias gg="git commit -am"
-
-# OS
+# Misc
 alias cwd="pwd | pbcopy"
 alias ls="ls -thorG"
 
 if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
 
-# Enable Terraform runs with NWI AWS assumerole sandbox account
+# Enable Terraform runs with assumerole account
 export AWS_SDK_LOAD_CONFIG=1
 
 autoload -U +X bashcompinit && bashcompinit
@@ -179,7 +157,18 @@ function terraform-use {
 export GO111MODULE=on
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/ldong/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ldong/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/lynnux/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/lynnux/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/ldong/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ldong/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/Users/lynnux/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/lynnux/google-cloud-sdk/completion.zsh.inc'; fi
+
+# enable color support of ls and also add handy aliases (for ubuntu)
+  if [ -x /usr/bin/dircolors ]; then
+      test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+      alias ls='ls --color=auto'
+      alias dir='dir --color=auto'
+      alias vdir='vdir --color=auto'
+      alias grep='grep --color=auto'
+      alias fgrep='fgrep --color=auto'
+      alias egrep='egrep --color=auto'
+  fi

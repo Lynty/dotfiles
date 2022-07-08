@@ -10,6 +10,7 @@ brew install --cask visual-studio-code rectangle
 brew install z
 brew install jq
 brew install fd
+brew install go
 brew install kubernetes-cli
 brew install kubectx
 brew install python
@@ -18,5 +19,8 @@ brew install helm
 brew install zsh
 brew install zsh-syntax-highlighting
 brew install terraform-docs
+brew tap superbrothers/zsh-kubectl-prompt
+brew install zsh-kubectl-prompt
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-ZSH="$HOME/dotfiles/oh-my-zsh" sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+ZSH="$HOME/.oh-my-zsh" sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
