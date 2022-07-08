@@ -50,6 +50,8 @@ else
     echo "virtualenvwrapper failed to install" >> $log_file
 fi
 
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 #==============
 # Give the user a summary of what has been installed
 #==============

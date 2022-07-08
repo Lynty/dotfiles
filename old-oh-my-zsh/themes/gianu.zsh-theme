@@ -1,6 +1,8 @@
 #OLD_PROMPT='[%{$fg_bold[white]%}%n%{$reset_color%}@%{$fg_bold[red]%}%m%{$reset_color%} %{$fg[cyan]%}%c%{$reset_color%} %{$fg[white]%}($ZSH_KUBECTL_PROMPT)%{$reset_color%} $(git_prompt_info)%{$reset_color%}]$ '
 
-PROMPT='%{$fg_bold[red]%}lynnux %{$reset_color%}%{$fg_bold[cyan]%}%c%{$reset_color%}%{$reset_color%} $(git_prompt_info)%{$reset_color%} ➤ '
+PROMPT='$fg_bold[red]%}%m %{$reset_color%}%{$fg_bold[cyan]%}%c%{$reset_color%}%{$reset_color%} $(git_prompt_info)%{$reset_color%} ➤ '
+# to see user@hostname
+#PROMPT='%{$fg_bold[red]%}lynnux%{$fg_bold[white]%}@%{$fg_bold[red]%}%m %{$reset_color%}%{$fg_bold[cyan]%}%c%{$reset_color%}%{$reset_color%} $(git_prompt_info)%{$reset_color%} ➤ '
 # to see full path
 #PROMPT='%{$fg_bold[red]%}lynnux %{$reset_color%}%{$fg_bold[cyan]%}%~%{$reset_color%}%{$reset_color%} $(git_prompt_info)%{$reset_color%} ➤ '
 
