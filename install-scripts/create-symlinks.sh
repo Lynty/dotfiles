@@ -36,6 +36,14 @@ ln -sf $dotfiles_dir/old-oh-my-zsh/custom/ $dotfiles_dir/oh-my-zsh/custom
 ln -sf $dotfiles_dir/old-oh-my-zsh/themes/gianu.zsh-theme $dotfiles_dir/oh-my-zsh/themes/gianu.zsh-theme
 
 #==============
+# vim pathogen bundles
+#==============
+mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+git clone https://github.com/hashivim/vim-terraform.git ~/.vim/bundle/vim-terraform
+git clone https://github.com/fatih/vim-go.git ~/.vim/bundle/vim-go
+
+#==============
 # Set zsh as the default shell
 #==============
 chsh -s /bin/zsh
