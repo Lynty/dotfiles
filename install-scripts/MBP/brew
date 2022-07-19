@@ -17,6 +17,7 @@ brew install python
 brew install siege
 brew install helm
 brew install zsh
+brew install ansible
 brew install zsh-syntax-highlighting
 brew install terraform-docs
 brew tap superbrothers/zsh-kubectl-prompt

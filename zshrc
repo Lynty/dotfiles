@@ -1,6 +1,7 @@
 export DOTFILES=$HOME/dotfiles
 # Path to your oh-my-zsh installation.
 export ZSH="$DOTFILES/oh-my-zsh"
+export PATH=$PATH:~/go/bin
 
 #export NIX_IGNORE_SYMLINK_STORE=1 #https://github.com/NixOS/nix/issues/2925
 #. $HOME/.nix-profile/etc/profile.d/nix.sh
@@ -99,6 +100,7 @@ alias dpsa="docker ps -a"
 alias dce="docker-compose exec"
 alias dcu="docker-compose up -d"
 alias dcd="docker-compose down"
+alias di="docker images"
 # Terraform
 alias tf="terraform"
 alias tfi="terraform init"
