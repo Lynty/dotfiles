@@ -124,6 +124,9 @@ alias gg="git commit -am"
 # Misc
 alias cwd="pwd | pbcopy"
 alias ls="ls -thorG"
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
 
 if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
 
