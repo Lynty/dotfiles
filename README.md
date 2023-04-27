@@ -2,6 +2,8 @@
 
 ### Macbook Pro
 - install homebrew: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+- add homebrew to PATH: `(echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/lynnux/.profile
+    eval "$(/opt/homebrew/bin/brew shellenv)"`
 - `./install-scripts/MBP/brew`
 - `./install-scripts/create-symlinks.sh`
 - install iterm2 and import profile
