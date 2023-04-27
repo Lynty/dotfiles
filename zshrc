@@ -53,6 +53,7 @@ ZSH_THEME="gianu"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  git z
   colored-man-pages
 )
 
@@ -134,7 +135,6 @@ if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
 export AWS_SDK_LOAD_CONFIG=1
 
 autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C $HOME/bin/vault vault
 
 function terraform-use {
   vsn=$1
