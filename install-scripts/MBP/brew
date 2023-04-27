@@ -22,9 +22,14 @@ brew install zsh-syntax-highlighting
 brew install terraform-docs
 brew tap superbrothers/zsh-kubectl-prompt
 brew install zsh-kubectl-prompt
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+brew install zsh-autosuggestions
+#git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 brew install ruby
 gem install cargo # prerequisite for installing rubyfmt
 brew install rubyfmt
 
-ZSH=sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+curl https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-428.0.0-darwin-arm.tar.gz --output ~/Downloads/google-cloud-cli-428.0.0-darwin-arm.tar.gz
+tar xf ~/Downloads/google-cloud-cli-428.0.0-darwin-arm.tar.gz --directory=gcloud-428.0.0-darwin-arm
+./gcloud-428.0.0-darwin-arm/google-cloud-sdk/install.sh
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended

@@ -17,6 +17,8 @@ defaults write -g KeyRepeat -int 1
   - magenta `6c5b7b`
   - cyan `077b88`
 
+- navigate to go/upvote/hosts and modify protection
+
 ### Ubuntu
 - `./install-scripts/Linux/ubuntu-install-pkgs.sh`
 - `./install-scripts/create-symlinks.sh`
@@ -29,6 +31,6 @@ defaults write -g KeyRepeat -int 1
 
 # todo
 - [x] Gianu theme symlink `~/.oh-my-zsh/themes/gianu.zsh-theme`
-- [ ] Set up easy way to install `gcloud` and add to `$PATH`
+- [x] Set up easy way to install `gcloud` and add to `$PATH`
 - [ ] zsh-autosuggestions and zsh-kubectl-prompt for ubuntu
 - [x] automated vim pathogen install

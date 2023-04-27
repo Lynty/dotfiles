@@ -1,7 +1,7 @@
 export DOTFILES=$HOME/dotfiles
 # Path to your oh-my-zsh installation.
 export ZSH="$DOTFILES/oh-my-zsh"
-export PATH=$PATH:~/go/bin
+export PATH=$PATH:~/go/bin:/opt/homebrew/bin
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 #export NIX_IGNORE_SYMLINK_STORE=1 #https://github.com/NixOS/nix/issues/2925
@@ -54,7 +54,6 @@ ZSH_THEME="gianu"
 plugins=(
   git
   colored-man-pages
-  zsh-autosuggestions
 )
 
 # kubectl rprompt stuff
@@ -62,7 +61,6 @@ autoload -U colors; colors
 source /opt/homebrew/etc/zsh-kubectl-prompt/kubectl.zsh
 RPROMPT='%{$FG[242]%}kx:$ZSH_KUBECTL_CONTEXT%{$reset_color%}'
 
-source $ZSH/plugins/z/z.sh
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
@@ -163,12 +161,6 @@ function terraform-use {
 
 export GO111MODULE=on
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/lynnux/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/lynnux/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/lynnux/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/lynnux/google-cloud-sdk/completion.zsh.inc'; fi
-
 # enable color support of ls and also add handy aliases (for ubuntu)
   if [ -x /usr/bin/dircolors ]; then
       test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -179,3 +171,11 @@ if [ -f '/Users/lynnux/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ly
       alias fgrep='fgrep --color=auto'
       alias egrep='egrep --color=auto'
   fi
+
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/lynnux/dotfiles/gcloud-428.0.0-darwin-arm/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/lynnux/dotfiles/gcloud-428.0.0-darwin-arm/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/lynnux/dotfiles/gcloud-428.0.0-darwin-arm/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/lynnux/dotfiles/gcloud-428.0.0-darwin-arm/google-cloud-sdk/completion.zsh.inc'; fi
