@@ -2,6 +2,7 @@ export DOTFILES=$HOME/dotfiles
 # Path to your oh-my-zsh installation.
 export ZSH="$DOTFILES/oh-my-zsh"
 export PATH=$PATH:~/go/bin
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 #export NIX_IGNORE_SYMLINK_STORE=1 #https://github.com/NixOS/nix/issues/2925
 #. $HOME/.nix-profile/etc/profile.d/nix.sh
@@ -127,6 +128,7 @@ alias ls="ls -thorG"
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias p="python3"
 
 if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
 

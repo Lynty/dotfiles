@@ -23,5 +23,8 @@ brew install terraform-docs
 brew tap superbrothers/zsh-kubectl-prompt
 brew install zsh-kubectl-prompt
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+brew install ruby
+gem install cargo # prerequisite for installing rubyfmt
+brew install rubyfmt
 
 ZSH="$HOME/.oh-my-zsh" sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
